@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Множення елементів матриць</title>
+  <link rel="stylesheet" href="/fi.css">
+</head>
+<body>
+
+  <h1>Множення відповідних елементів двох матриць</h1>
+  <div id="error" class="error"></div>
+
+  <div id="matrix1Container">
+    <h2>Матриця A</h2>
+  </div>
+  <div id="matrix2Container">
+    <h2>Матриця B</h2>
+  </div>
+  <div id="resultContainer">
+    <h2>Результуюча матриця C = A × B</h2>
+  </div>
+
+  <script>
+    function isValidNumber(value) {
+      const num = parseInt(value);
+      return !isNaN(num) && num > 0;
+    }
+
+    function generateRandomMatrix(rows, cols, min, max) {
+      const matrix = [];
+      for (let i = 0; i < rows; i++) {
+        const row = [];
+        for (let j = 0; j < cols; j++) {
+          const rand = Math.floor(Math.random() * (max - min + 1)) + min;
+          row.push(rand);
+        }
+        matrix.push(row);
+      }
+      return matrix;
+    }
+
+    function multiplyMatrices(A, B) {
+      const rows = A.length;
+      const cols = A[0].length;
+      const result = [];
+      for (let i = 0; i < rows; i++) {
+        const row = [];
+        for (let j = 0; j < cols; j++) {
+          row.push(A[i][j] * B[i][j]);
+        }
+        result.push(row);
+      }
+      return result;
+    }
+
+    function renderMatrix(containerId, matrix, highlight = false) {
+      const container = document.getElementById(containerId);
+      const table = document.createElement("table");
+
+      matrix.forEach(row => {
+        const tr = document.createElement("tr");
+        row.forEach(cell => {
+          const td = document.createElement("td");
+          td.textContent = cell;
+          if (highlight) td.classList.add("highlight");
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      });
+
+      container.appendChild(table);
+    }
+
+    function start() {
+      const errorDiv = document.getElementById("error");
+      errorDiv.textContent = "";
+
+      const rows = prompt("Введіть кількість рядків (ціле число > 0):");
+      const cols = prompt("Введіть кількість стовпців (ціле число > 0):");
+      const a = prompt("Введіть мінімальне значення випадкових чисел:");
+      const b = prompt("Введіть максимальне значення випадкових чисел:");
+
+      if (!isValidNumber(rows) || !isValidNumber(cols) || isNaN(a) || isNaN(b) || parseInt(a) > parseInt(b)) {
+        errorDiv.textContent = " Помилка введення! Перевірте всі значення.";
+        return;
+      }
+
+      const r = parseInt(rows);
+      const c = parseInt(cols);
+      const min = parseInt(a);
+      const max = parseInt(b);
+
+      const matrixA = generateRandomMatrix(r, c, min, max);
+      const matrixB = generateRandomMatrix(r, c, min, max);
+      const resultMatrix = multiplyMatrices(matrixA, matrixB);
+
+      renderMatrix("matrix1Container", matrixA);
+      renderMatrix("matrix2Container", matrixB);
+      renderMatrix("resultContainer", resultMatrix, true);
+    }
+
+    window.onload = start;
+  </script>
+</body>
+</html>

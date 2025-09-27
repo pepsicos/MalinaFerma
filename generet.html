@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Генератор випадкових цитат</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #5a8d94;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .quote-box {
+      background: rgb(0, 255, 157);
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .quote {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .author {
+      font-size: 1em;
+      color: #000000;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      background-color: #ff009d80;
+      color: rgb(255, 159, 250);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7e0f6bad;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quote-box">
+    <div class="quote" id="quote">Натисніть кнопку, щоб побачити цитату.</div>
+    <div class="author" id="author">Автор</div>
+    <button onclick="newQuote()">Нова цитата</button>
+  </div>
+
+  <script>
+    const quotes = [
+      { text: "Спочатку вони ігнорують тебе, потім сміються з тебе, потім борються з тобою, а потім ти перемагаєш.", author: "Махатма Ганді" },
+      { text: "Просто зроби це!", author: "Шайа ЛаБаф" },
+      { text: "Життя не шахмати, одного мата не хвате ", author: "Вадим" },
+      { text: "Успіх приходить до тих, хто діє, а не чекає.", author: "Альберт Ейнштейн" },
+      { text: "Закон самоіндукції допомагає здати іспит з фізики", author: "Ілько"},
+      { text: "Сон, для слабких", author: "Ілько" }
+      
+    ];
+
+    function newQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").textContent = quotes[randomIndex].text;
+      document.getElementById("author").textContent = "— " + quotes[randomIndex].author;
+    }
+  </script>
+
+</body>
+</html>

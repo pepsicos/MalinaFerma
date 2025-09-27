@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформлення замовлення</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F0EAD6;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fffbe6;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+      text-align: center;
+      color: #5a3e1b;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #8B0000;
+      color: white;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #a72c2c;
+    }
+
+    .sort-entry {
+      margin-bottom: 20px;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 10px;
+    }
+
+    .add-sort-btn {
+      background-color: #5a3e1b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .add-sort-btn:hover {
+      background-color: #7b552a;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background-color: #8B5E3C;;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 20px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #7A4F2B;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a class="back-btn" href="file:///C:/Users/ADMIN/Desktop/CSS=HTML/katalog.html">Повернутись до каталогу</a>
+
+    <h2>Оформлення замовлення</h2>
+    <p style="text-align: center;">Будь ласка, заповніть форму нижче для оформлення замовлення.</p>
+
+    <form action="https://formspree.io/f/xeokawlk" method="post">
+      <label for="surname">Прізвище</label>
+      <input id="surname" name="surname" type="text" placeholder="Введіть прізвище" required>
+
+      <label for="name">Ім’я</label>
+      <input id="name" name="name" type="text" placeholder="Введіть ім’я" required>
+
+      <label for="patronymic">По батькові</label>
+      <input id="patronymic" name="patronymic" type="text" placeholder="Введіть по батькові" required>
+
+      <label for="number">Номер телефону</label>
+      <input id="number" name="number" type="tel" placeholder="+380..." required pattern="^\+?3?8?(0\d{9})$">
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="example@gmail.com" required>
+
+      <h3>Оберіть сорт/сорти малини та кількість</h3>
+      <div id="sorts">
+        <div class="sort-entry">
+          <label>Сорт</label>
+          <select name="sort[]" required>
+            <option value="">-- Оберіть сорт --</option>
+            <option value="Maravilla">Маравілла</option>
+            <option value="Himbotop">Хімботоп</option>
+            <option value="Heritage">Херітейдж</option>
+            <option value="Imara">Імара</option>
+            <option value="Margarita">Маргарита</option>
+            <option value="Інше">Інше</option>
+          </select>
+
+          <label>Кількість кущів</label>
+          <input type="number" name="amount[]" min="1" placeholder="Введіть кількість" required>
+        </div>
+      </div>
+
+      <button type="button" class="add-sort-btn" onclick="addSort()">Додати ще сорт</button>
+
+      <input type="submit" value="Надіслати замовлення">
+    </form>
+
+    
+  </div>
+
+  <script>
+    function addSort() {
+      const sortsDiv = document.getElementById("sorts");
+      const newEntry = document.createElement("div");
+      newEntry.className = "sort-entry";
+      newEntry.innerHTML = `
+        <label>Сорт</label>
+        <select name="sort[]" required>
+          <option value="">-- Оберіть сорт --</option>
+          <option value="Maravilla">Маравілла</option>
+          <option value="Himbotop">Хімботоп</option>
+          <option value="Heritage">Херітейдж</option>
+          <option value="Imara">Імара</option>
+          <option value="Margarita">Маргарита</option>
+          <option value="Інше">Інше</option>
+        </select>
+
+        <label>Кількість кущів</label>
+        <input type="number" name="amount[]" min="1" placeholder="Введіть кількість" required>
+      `;
+      sortsDiv.appendChild(newEntry);
+    }
+  </script>
+
+</body>
+</html>

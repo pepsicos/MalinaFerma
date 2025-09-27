@@ -1,0 +1,153 @@
+body {
+
+background-color: #F0EAD6;
+font-family: Arial, Helvetica, sans-serif;
+font-size: medium;
+}
+
+
+
+
+.po a {
+
+ text-decoration: none;
+ }
+
+
+
+
+ .maravila  :hover{
+    animation: pulse 2s 2;
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);} 
+ 100% {transform: scale(1);}
+}
+
+
+.pi a {
+
+text-decoration: none;
+}
+
+.lo {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  margin: 120px auto 12px auto;
+  box-shadow: 0 4px 8px rgba(220, 20, 60, 0.4);
+}
+
+.lo:hover {
+  background-color: #b22222;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(178, 34, 34, 0.6);
+}
+
+ 
+
+.lo:hover {
+    background-color: darkred;
+    color: wheat    ;
+}
+ .lo a {
+text-decoration: none   ;
+ }
+
+ .center {
+    display: flex;
+    justify-content: center;
+
+
+}
+ 
+figcaption{
+  text-align: center;
+  
+  padding-top: 10px;
+}
+
+
+.table {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.catalog {
+  width: 50%;
+  border: 5px solid #000;
+  border-collapse: collapse;
+  background-color: #E8F5E9;
+  text-align: center;
+  font-size: 18px;
+}
+
+.catalog caption {
+  font-size: 24px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.catalog thead {
+  background-color: #95a5a6;
+}
+
+.catalog th,
+.catalog td {
+  padding: 10px;
+  border: 1px solid #333;
+}
+
+.warning {
+  color: red;
+  font-style: italic;
+  font-size: 18px;
+}
+
+
+
+.text {
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+
+
+.menu {
+  list-style: none; /* в нашому випадку забираємо кружочки */
+  display: flex; /* розміщуємо списки в середекні */
+  flex-direction: column; /* Вертикальний порядок*/
+    
+  gap: 15px;              
+  padding: 0;
+  margin-top: 20px;
+}
+
+.menu li a {
+  display: inline-block; /* ширина висота посилання */
+  width: 100px;           
+  text-align: center;
+  padding: 12px 20px;
+  background-color: #8B5E3C;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px; /* закруглення кніпок*/
+  font-size: 16px;
+  font-weight: bold; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu li a:hover {
+  background-color: #7A4F2B; 
+  transform: scale(1.05); /*збільшення кнопки */
+}

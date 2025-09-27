@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Селекторні кнопки</title>
+  
+</head>
+<body>
+
+  <h2>Оберіть пункти</h2>
+  <div class="checkbox-group">
+    <label><input type="checkbox" value="Гамма Розпад">Гамма Розпад</label>
+    <label><input type="checkbox" value="Лінзи">Лінзи</label>
+    <label><input type="checkbox" value="Дисперсія світла">Дисперсія світла</label>
+    <label><input type="checkbox" value="Інтерференція світла"> Інтерференція світла</label>
+  </div>
+
+  <button onclick="showSelection()">OK</button>
+
+  <script>
+    function showSelection() {
+      const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+      const selectedItems = [];
+
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          selectedItems.push(cb.value);
+        }
+      });
+
+      const message = selectedItems.length > 0 
+        ? "Ви обрали:\n" + selectedItems.join("\n")
+        : "Жоден пункт не обрано.";
+
+     
+      const newWindow = window.open('', '', 'width=400,height=300');
+      newWindow.document.write(`<pre>${message}</pre>`);
+    }
+  </script>
+
+</body>
+</html>

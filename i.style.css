@@ -1,0 +1,79 @@
+body {
+background-color: #F0EAD6;
+font-family: Arial, Helvetica, sans-serif;
+font-size: medium;
+
+
+}
+
+ .foto1 :hover{
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);} 
+ 100% {transform: scale(1);}
+}
+
+
+@keyframes rotate{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+
+
+@keyframes fadeIn {
+    0% {opacity: 5;}
+    50% {opacity: 0;}
+    100% {opacity: 5;}
+}
+.lo a {
+text-decoration: none;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.text {
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+
+
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+    
+  gap: 15px;              
+  padding: 0;
+  margin-top: 20px;
+}
+
+.menu li a {
+  display: inline-block;
+  width: 100px;           
+  text-align: center;
+  padding: 12px 20px;
+  background-color: #8B5E3C; 
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu li a:hover {
+  background-color: #7A4F2B; 
+  transform: scale(1.05);
+}

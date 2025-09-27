@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Формування числа з 4 цифр</title>
+  <link rel="stylesheet" href="./fi.css">
+</head>
+<body>
+
+  <h1>Формування числа з чотирьох цифр</h1>
+
+  <div>
+    <strong>Умова задачі</strong>
+    <p>
+      Необхідно створити програму, яка отримує від користувача 4 цифри,
+      а повертає ціле десяткове число, сформоване з цих цифр. <br>
+      Наприклад, якщо введено: 3 7 5 9, то результатом буде 3759. <br>
+      Програма повинна повторюватися, поки користувач не вирішить зупинитися.
+    </p>
+  </div>
+
+  <div>
+    <input type="number" id="digit1" min="0" max="9">
+    <input type="number" id="digit2" min="0" max="9">
+    <input type="number" id="digit3" min="0" max="9">
+    <input type="number" id="digit4" min="0" max="9">
+  </div>
+
+  <button onclick="generateNumber()">Сформувати число</button>
+  <button onclick="clearAll()">Очистити</button>
+
+  <div id="result"></div>
+  <div id="error"></div>
+
+  
+
+  <script>
+    function formNumber(a, b, c, d) {
+      return a * 1000 + b * 100 + c * 10 + d;
+    }
+
+    function generateNumber() {
+      const d1 = parseInt(document.getElementById("digit1").value);
+      const d2 = parseInt(document.getElementById("digit2").value);
+      const d3 = parseInt(document.getElementById("digit3").value);
+      const d4 = parseInt(document.getElementById("digit4").value);
+
+      const resultDiv = document.getElementById("result");
+      const errorDiv = document.getElementById("error");
+
+      resultDiv.textContent = '';
+      errorDiv.textContent = '';
+
+      if (
+        isNaN(d1) || isNaN(d2) || isNaN(d3) || isNaN(d4) ||
+        d1 < 0 || d1 > 9 || d2 < 0 || d2 > 9 || d3 < 0 || d3 > 9 || d4 < 0 || d4 > 9
+      ) {
+        errorDiv.textContent = " Введіть усі 4 цифри від 0 до 9.";
+        return;
+      }
+
+      const number = formNumber(d1, d2, d3, d4);
+      resultDiv.textContent = ` Отримане число ${number}`;
+
+      
+      const newItem = document.createElement("li");
+      newItem.textContent = number;
+      historyList.appendChild(newItem);
+    }
+
+    function clearAll() {
+      document.getElementById("digit1").value = '';
+      document.getElementById("digit2").value = '';
+      document.getElementById("digit3").value = '';
+      document.getElementById("digit4").value = '';
+
+      document.getElementById("result").textContent = '';
+      document.getElementById("error").textContent = '';
+      
+    }
+  </script>
+
+</body>
+</html>

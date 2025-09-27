@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JAVA LAB — Про нас</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+     
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #c9831b, #f8ffc2);
+      min-height: 100vh;
+      padding: 30px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  
+    .logo {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    ul.menu {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    ul.menu li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      padding: 10px 20px;
+      background-color: #8B5E3C;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    ul.menu li a:hover {
+      background-color: #7A4F2B;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #2e3b00;
+    }
+
+    .lo p {
+      font-size: 1.2em;
+      margin: 12px 0;
+    }
+
+    .lo a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .lo a:hover {
+      text-decoration: underline;
+    }
+
+    .title-box p {
+      font-size: 60px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #4CAF50, #334406);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulse 2s infinite;
+      margin: 40px 0 20px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .but {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .but a {
+      text-decoration: none;
+      background-color: #ffe600;
+      color: #000;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: 1.1em;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, background-color 0.3s;
+      width: 240px;
+      text-align: center;
+    }
+
+    .but a:hover {
+      background-color: #c9b800;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .title-box p {
+        font-size: 36px;
+      }
+
+      .but a {
+        width: 90%;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <img class="logo" src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java Logo">
+
+ 
+  <ul class="menu">
+    <li><a href="file:///C:/Users/ADMIN/Desktop/CSS=HTML/index.html">Головна</a></li>
+    <li><a href="file:///C:/Users/ADMIN/Desktop/CSS=HTML/katalog.html">Каталог</a></li>
+  </ul>
+
+ 
+  <h2>Інформація про нас</h2>
+  <div class="lo">
+    <p><big>Місце знаходження:
+      <a href="https://www.google.com/maps/place/Жмеринка" target="_blank">
+        Вінницька область, місто Жмеринка
+      </a></big></p>
+    <p><big>Номер телефону: +380661904543</big></p>
+    <p> <big>Viber: +380673863897 </big></p>
+    <p><big>Електронна адреса:
+      <a href="mailto:Tsabak.a19@gmail.com">Tsabak.a19@gmail.com</a></big></p>
+  </div>
+
+  
+  <div class="title-box">
+    <p>JAVA LAB</p>
+  </div>
+
+ 
+  <div class="but">
+    <a href="https://tilda.cc/page/?pageid=70366349&previewmode=yes" target="_blank"><i class="fas fa-id-card"></i> Моя біографія</a>
+    <a href="file:///C:/Users/ADMIN/Desktop/CSS=HTML/fi.html"><i class="fas fa-code"></i> Лаба 5іу</a>
+    <a href="file:///C:/Users/ADMIN/Desktop/CSS=HTML/generet.html"><i class="fas fa-quote-left"></i> Цитата на день</a>
+    <a href="file:///C:/Users/ADMIN/Desktop/CSS=HTML/lab6.2.html"><i class="fas fa-table"></i> Матрікс 5.2</a>
+    <a href="">Лаба 6.1</a>
+    <a href="file:///C:/Users/ADMIN/Desktop/CSS=HTML/zamovlena.html?">Лаба 6.2</a>
+    <a href="file:///C:/Users/ADMIN/Desktop/CSS=HTML/lab%207.html">Лаба 7</a>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
